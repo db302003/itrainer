@@ -1,0 +1,69 @@
+<!-- BREAK OPTIONS PAGE -->
+<div class="container container-fluid box-style" id="break-page">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="display-4">Break Time!</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <hr class="my-4">
+            <a class="btn btn-secondary btn-lg" id="break-button" role="button">Begin Break</a>
+            <a class="btn btn-secondary btn-lg" id="new-break" role="button">Adjust Timer</a>
+
+        </div>
+    </div>
+    <a class="logout btn btn-secondary btn-sm" href="/logout">Log Out</a>
+
+</div>
+
+<!-- ADJUST BREAK PAGE -->
+<div class="container container-fluid box-style" id="adjust-break-page">
+    <div class="row">
+        <div class="col-12">
+            <form>
+                <div class="form-group">
+                    <h1 class="display-5">Adjust Break</h1>
+                    <label for="adjust-break">New break time (minutes)</label>
+                    <input type="text" class="form-control" id="adjust-break" placeholder="How long do you want to take a break?">
+                </div>
+                <button type="submit" class="btn btn-secondary btn-lg" id="adjust-break-button">Begin Timer</button>
+            </form>
+        </div>
+
+    </div>
+    <a class="logout btn btn-secondary btn-sm" href="/logout">Log Out</a>
+
+</div>
+
+
+
+<!-- BREAK TIMER PAGE -->
+<div class="container container-fluid box-style" id="break-timer">
+    <div class="row">
+        <div class="col-12">
+            <h1 id="break-time" class="center"></h1>
+            <h2 class="display-4">Take a break!</h2>
+            <br>
+            <button class="btn btn-secondary btn-lg" id="foodButton">Show Food Video</button>
+            <button class="btn btn-secondary btn-lg" id="nofoodButton">Hide Food Video</button>
+            <button class="btn btn-secondary btn-lg" id="workoutButton">Show Workout Video</button>
+            <button class="btn btn-secondary btn-lg" id="hideWorkoutButton">Hide Workout Video</button>
+            <br><br>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12" id="foodDiv">
+            {{!-- Cat Video --}}
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qoszFMvHnas" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>            <br>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12" id="workoutDiv">
+            {{!-- Workout Video --}}
+<iframe width="560" height="315" src="https://www.youtube.com/embed/IZgCvsg0oB0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>            <br>
+        </div>
+    </div>
+
+    <a class="logout btn btn-secondary btn-sm" href="/logout">Log Out</a>
+</div>

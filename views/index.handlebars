@@ -1,0 +1,71 @@
+<div id="home">
+  <div class="container">
+    <div class="row">
+      <div class="col-8 offset-2">
+
+        {{!-- put these in a navbar or something inside the start page --}}
+
+        <!-- START PAGE -->
+        <div class="container container-fluid box-style" id="start-page">
+          <div class="row">
+            <div class="col-12">
+              <h1 class="display-4">LETS WORKOUT!</h1>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <hr class="my-4">
+              <p class="lead">Workout for 15 minutes</p>
+              <a class="btn btn-secondary btn-lg" id="start-button" role="button" style="color: white">Start timer</a>
+              <br>
+              <br>
+              <br>
+              <p>If you want to access the full iTrainer features, please sign up or login</p>
+              <p>
+                <a href="/signup" class="btn btn-secondary btn-lg" role="button">Sign Up</a>
+                <a href="/login" class="btn btn-secondary btn-lg" role="button">Login</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- workout TIMER PAGE -->
+        <div class="container container-fluid box-style" id="workout-timer">
+          <div class="row">
+            <div class="col-12">
+              <h1 class="display-4">Keep workingout for <span id="workout-time">15:00</span> minutes!</h1>
+            </div>
+          </div>
+        </div>
+
+        <!-- BREAK OPTIONS PAGE -->
+        <div class="container container-fluid box-style" id="break-page">
+          <div class="row">
+            <div class="col-12">
+              <h1 class="display-4">Break Time!</h1>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <hr class="my-4">
+              <p class="lead">
+                {{!-- Are we using the lead class here? --}}
+              </p>
+              <a class="btn btn-secondary btn-lg" id="break-button" role="button" style="color: white">Begin Break</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- BREAK TIMER PAGE -->
+        <div class="container container-fluid box-style" id="break-timer">
+          <div class="row">
+            <div class="col-12">
+              <h1 class="display-4">Take a break for <span id="break-time">5:00</span> minutes!</h1>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

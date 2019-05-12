@@ -1,0 +1,40 @@
+body {
+    background: url(../img/gokutrain.gif) no-repeat center center fixed;
+    background-size: cover;
+}
+.box-style {
+    width: 100%;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 100px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    padding: 50px;
+    background: rgba(7, 120, 233, 0.75);
+    color: black;
+}
+
+#map {
+    height: 400px;
+}
+
+#new-workout, #break-button, #new-break {
+    color: white;
+}
+
+#workout-time, #break-time {
+    font-size: 8.5rem;
+}
+
+#break-timer, #adjust-break-page, #adjust-workout-page, .spotifyDiv, .mixDiv, #mapHide, #mapDiv, #mixHide, #spotifyHide, #nofoodButton, #hideWorkoutButton, #workoutDiv{
+    display: none;
+}
+
+#mixHide, #spotifyHide, #nofoodButton, #hideWorkoutButton {
+    color: black;
+}
+
+.logout {
+    font-family: 'Courier New', Courier, monospace;
+    float: right;
+}

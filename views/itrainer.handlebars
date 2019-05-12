@@ -1,0 +1,49 @@
+<!-- WORKOUT TIMER PAGE -->
+<div class="container container-fluid box-style" id="workout-timer">
+    <div class="row">
+        <div class="col-12">
+            <h1 id="workout-time" class="center"></h1>
+            <h2 class="display-4">Keep Twerking It!</h2>
+            <br>
+            <button class="btn btn-secondary btn-lg" id="spotifyShow">Show Spotify</button>
+            <button class="btn btn-secondary btn-lg" id="spotifyHide">Hide Spotify</button>
+            <button class="btn btn-secondary btn-lg" id="mixShow">Show WorkOut Mix</button>
+            <button class="btn btn-secondary btn-lg" id="mixHide">Hide WorkOut Mix</button>
+            <br><br>
+        </div>
+    </div>
+    <div class="row d-flex align-content-start justify-content-center flex-wrap">
+        {{!-- Spotify playlist --}}
+        <div class="col-6 spotifyDiv">
+            <iframe src="https://open.spotify.com/embed/user/9zbhkeim30hn4nspl375ll2vb/playlist/5lIKENkRSjfaYHH5GQxprg" width="100%"
+                height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        </div>
+
+
+        {{!-- WorkOut Mix Youtube Video --}}
+        <div class="col-6 mixDiv">
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/n00Cmj4yG8Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <br>
+        </div>
+
+        <div class="col-12 spotifyDiv">
+            <h3>Workout Playlist</h3>
+            <h5>Add new songs to the playlist by searching a songname below!</h5>
+            <form class="songSubmit">
+                <label for="songName">Song Title:</label>
+                <input id="songName" type="text" placeholder="Type Song Name">
+                <button id="songButton" type="submit">Add Song</button>
+            </form>
+            <br>
+
+            <br><br>
+        </div>
+    </div>
+
+
+
+    {{!-- Logout Button --}}
+    <a class="logout btn btn-secondary btn-sm" href="/logout">Log Out</a>
+</div>
+
+</div>

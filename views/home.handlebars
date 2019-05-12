@@ -1,0 +1,44 @@
+<!-- START PAGE -->
+<div class="container container-fluid box-style" id="start-page">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="display-4">LETS TWERK IT!</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <hr class="my-4">
+            <p class="lead">Workout for 15 minutes</p>
+            <a href="/itrainer" class="btn btn-secondary btn-lg" id="start-button" role="button">Begin Timer</a>
+            <a class="btn btn-secondary btn-lg" id="new-workout" role="button">Adjust Timer</a>
+            <button class="btn btn-secondary btn-lg" id="mapButton">Show Map</button>
+            <button class="btn btn-secondary btn-lg" id="mapHide" style="color: black">Hide Map</button>
+            <br><br>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12" id="mapDiv">
+            <h3>Nearby Gyms and Grocery Stores</h3>
+            <div id="map"></div>
+            <br>
+
+            <br><br>
+        </div>
+    </div>
+    <a class="logout btn btn-secondary btn-sm" href="/logout">Log Out</a>
+</div>
+<div class="container container-fluid box-style" id="adjust-workout-page">
+    <div class="row">
+        <div class="col-12">
+            <form>
+                <div class="form-group">
+                    <h1 class="display-5">Adjust Workout</h1>
+                    <label for="adjust-workout">New workout time (minutes)</label>
+                    <input type="text" class="form-control" id="adjust-workout" placeholder="How long do you want to workout for?">
+                </div>
+                <button type="submit" class="btn btn-secondary btn-lg" id="adjust-workout-button">Begin Timer</button>
+            </form>
+        </div>
+    </div>
+    <a class="logout btn btn-secondary btn-sm" href="/logout">Log Out</a>
+</div>
