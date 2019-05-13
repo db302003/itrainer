@@ -6,6 +6,7 @@ var session = require("express-session");
 //requiring passport as we configured it
 var passport = require("./config/passport");
 var _USERS = require("./db/seed-users.json");
+var _STATS = require("./db/seed-workouts.json");
 
 var db = require("./models");
 
@@ -34,7 +35,7 @@ app.set("view engine", "handlebars");
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 
-var syncOptions = { force: false };
+var syncOptions = { force: true };
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`
@@ -45,10 +46,18 @@ if (process.env.NODE_ENV === "test") {
 // Starting the server, syncing our models ------------------------------------/
 db.sequelize.sync(syncOptions)
 .then(function() {
+  debugger;
   if(syncOptions.force === true){
   db.User.bulkCreate(_USERS)
     .then(function(users) {
       console.log("success seeding users " + users);
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
+  db.Workout.bulkCreate(_STATS)
+    .then(function(stats) {
+      console.log("success seeding stats " + stats);
     })
     .catch(function(error) {
       console.log(error);

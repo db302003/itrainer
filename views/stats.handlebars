@@ -30,18 +30,35 @@
           </div>
           <button id="submit" class="btn btn-primary float-right">Submit</button>
         </form>
-        <h3>Workout Stats:</h3>
-        <ul id="workout-list" class="list-group">
-          {{#each lots}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="stat/{{this.id}}">{{this.date}} | {{this.type}} </a>
-          </li>
-          {{/each}}
-        </ul>
-      </div>
+
     </div>
   </div>
+
+        <h3>Workout Stats:</h3>
+        <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Type</th>
+      <th scope="col">Weight</th>
+      <th scope="col">Sets</th>
+      <th scope="col">Reps</th>
+      <th scope="col">Notes</th>
+      <th scope="col">Date</th>
+    </tr>
+  </thead>
+  <tbody>
+
+         {{#each workouts}}
+         <tr>
+          <!--th scope="row"><a href="stat/{{this.id}}">{{this.type}}</a></th-->
+          <th scope="row">{{this.type}}</th>
+          <td>{{this.weight}}</td>
+          <td>{{this.sets}}</td>
+          <td>{{this.reps}}</td>
+          <td>{{this.notes}}</td>
+          <td>{{this.date}}</td>
+          </tr>
+          {{/each}}
+  </tbody>
 </div>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/lot.js"></script>

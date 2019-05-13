@@ -1,10 +1,16 @@
 module.exports = function(sequelize, DataTypes) {
   var Workout = sequelize.define("Workout", {
+    id: {
+      primaryKey: true,
+      type: DataTypes.INTEGER,
+      autoIncrement: true
+    },
     type: {
       type: DataTypes.STRING,
     },
     date: {
-      type: DataTypes.DATE
+      type: DataTypes.DATE,
+      defaultValue: sequelize.NOW
     },
     weight: {
       type: DataTypes.INTEGER
@@ -20,11 +26,17 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  // Workout.associate = function(models) {
-  //   Workout.hasOne(models.User, {
+  Workout.associate = function(models) {
+  
+    Workout.belongsTo(models.User, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+    //   Workout.hasOne(models.User, {
   //     // onDelete: "set null"
   //   });
-  // };
+  };
 
   return Workout;
 };

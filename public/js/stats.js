@@ -1,3 +1,4 @@
+
 // Get references to page elements
 var $woType = $("#workout-type");
 var $woDate = $("#workout-date");
@@ -42,28 +43,42 @@ var refreshStats = function() {
   API.getStats().then(function(data) {
     // console.log(data);
     var $stats = data.map(function(workout) {
-      var $a = $("<a>")
-        .text(workout.date+" | "+ workout.type)
-        .attr("href", "stat/" + workout.id);
+      var $tr = $("<tr>");
+      var $tdType = $("<th>")
+      .attr("scope", "row")
+      .text(workout.type);
+      
+      var $tdWeight = $("<tr>").text(workout.weight);
+      var $tdSets = $("<tr>").text(workout.sets);
+      var $tdReps = $("<tr>").text(workout.reps);
+      var $tdNotes = $("<tr>").text(workout.notes);
+      var $tdDate = $("<tr>").text(workout.date);
+  
+      $tr.append($tdType).append($tdWeight).append($tdSets).append($tdReps).append($tdNotes).append($tdDate); 
+      
+      // var $a = $("<a>")
+      //   .text( t+" | "+ workout.type)
+      //   .attr("href", "stat/" + workout.id);
 
-      var $li = $("<li>")
-        .attr({
-          class: "list-group-item",
-          "data-id": lot.id
-        })
-        .append($a);
+      // var $li = $("<li>")
+      //   .attr({
+      //     class: "list-group-item",
+      //     "data-id": workout.id
+      //   })
+      //   .append($a);
 
       // var $button = $("<button>")
       //   .addClass("btn btn-danger float-right delete")
       //   .text("ｘ");
 
       // $li.append($button);
+      $woList.append(workout);
 
-      return $li;
+      return $tr;
     });
 
     $woList.empty();
-    $woList.append($lots);
+    $woList.append($stats);
   });
 };
 
