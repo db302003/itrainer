@@ -74,17 +74,16 @@ module.exports = function (app) {
     });
   });
 
-  // Render 404 page for any unmatched routes
-  app.get("*", function (req, res) {
-    res.render("404");
-  });
-
   app.get("/stats", isAuthenticated, function (req, res) {
     res.render("stats", {
       title: "statistics",
       customcss: `<link rel="stylesheet" href="/styles/stats.css"></link>`,
       customjs: `<script type="text/javascript" src="/js/stats.js"></script>`
     });
+  });
+ // Render 404 page for any unmatched routes
+  app.get("*", function (req, res) {
+    res.render("404");
   });
 
 };
