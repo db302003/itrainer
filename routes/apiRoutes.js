@@ -67,4 +67,27 @@ module.exports = function (app) {
     req.logout();
     res.redirect("/");
   });
+
+    // Get all stats
+    app.get("/api/stats", function(req, res) {
+      console.log("getting all stats");
+      db.Workout.findAll({}).then(function(stats) {
+        res.json(stats);
+      });
+    });
+  
+    // Create a new User
+    app.post("/api/stats", function(req, res) {
+      db.Workout.create(req.body).then(function(dbLot) {
+        res.json(dbLot);
+      });
+    });
+  
+    //find one lot
+    app.get("/api/stats/:id", function(req, res) {
+      console.log("getting all stats");
+      db.Workout.findById(req.params.id).then(function(stats) {
+        res.json(stats);
+      });
+    });
 };

@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "Rq6io669!",
+    "password": "Roscoe5113!",
     "database": "workout_trackerdb",
     "host": "localhost",
     "port": 3306,
@@ -9,7 +9,7 @@
   },
   "test": {
     "username": "root",
-    "password": "Rq6io669!",
+    "password": "Roscoe5113!",
     "database": "testdb",
     "host": "localhost",
     "dialect": "mysql",

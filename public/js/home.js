@@ -42,3 +42,6 @@ $("#adjust-workout-button").on("click", function (event) {
 $("#start-button").on("click", function () {
     window.location.replace("/itrainer");
 });
+$("#statsButton").on("click", function () {
+    window.location.replace("/stats");
+});

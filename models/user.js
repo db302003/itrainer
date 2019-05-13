@@ -18,13 +18,13 @@ module.exports = function(sequelize, DataTypes) {
         }
     });
 
-    //This will check if hashed password entered by user can be compared to the hashed password stored in the database
+     //This will check if hashed password entered by user can be compared to the hashed password stored in the database
     User.prototype.validPassword = function(password) {
         return bcrypt.compareSync(password, this.password);
     };
     // This runs before the user is created, This is hashing our password before it's entered into the database
     User.hook("beforeCreate", function(user){
-        user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
+        user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10));
     });
     return User;
 };

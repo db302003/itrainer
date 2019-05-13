@@ -4,7 +4,8 @@ var bodyParser = require("body-parser");
 var exphbs = require("express-handlebars");
 var session = require("express-session");
 //requiring passport as we configured it
-var passport = require("./config/passport")
+var passport = require("./config/passport");
+var _USERS = require("./db/seed-users.json")
 
 var db = require("./models");
 
@@ -42,7 +43,19 @@ if (process.env.NODE_ENV === "test") {
 }
 
 // Starting the server, syncing our models ------------------------------------/
-db.sequelize.sync(syncOptions).then(function() {
+db.sequelize.sync(syncOptions)
+.then(function() {
+  if(syncOptions.force === true){
+  db.User.bulkCreate(_USERS)
+    .then(function(users) {
+      console.log("success seeding users " + users);
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
+  }
+})
+.then(function() {
   app.listen(PORT, function() {
     console.log(
       "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",

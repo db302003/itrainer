@@ -1,0 +1,47 @@
+<div id="stats">
+  <div class="container">
+    <div class="row">
+      <div class="col-8 offset-2">
+        <h2>Enter your workout statistics</h2>
+        <form class="clearfix mb-4" action="POST">
+          <div class="form-group">
+            <label for="workout-type">Type</label>
+            <input type="text" id="workout-type" class="form-control" aria-describedby="workout-type" placeholder="Enter type of workout. cardio, weights, the focus of your workout">
+          </div>
+          <div class="form-group">
+            <label for="workout-date">Date</label>
+            <input type="date" id="workout-date" class="form-control" aria-describedby="workout-date" placeholder="Enter date">
+          </div>
+          <div class="form-group">
+            <label for="workout-weight">Weight</label>
+            <input type="text" id="workout-weight" class="form-control" aria-describedby="workout-weight" placeholder="Enter weight">
+          </div>
+          <div class="form-group">
+            <label for="workout-sets">Sets</label>
+            <input type="text" id="workout-sets" class="form-control" aria-describedby="workout-sets" placeholder="Enter sets">
+          </div>
+          <div class="form-group">
+            <label for="workout-reps">Reps</label>
+            <input type="text" id="workout-reps" class="form-control" aria-describedby="workout-reps" placeholder="Enter reps">
+          </div>
+          <div class="form-group">
+            <label for="workout-notes">Notes</label>
+            <input type="text" id="workout-notes" class="form-control" aria-describedby="workout-notes" placeholder="Enter notes">
+          </div>
+          <button id="submit" class="btn btn-primary float-right">Submit</button>
+        </form>
+        <h3>Workout Stats:</h3>
+        <ul id="workout-list" class="list-group">
+          {{#each lots}}
+          <li data-id="{{this.id}}" class="list-group-item">
+            <a href="stat/{{this.id}}">{{this.date}} | {{this.type}} </a>
+          </li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/js/lot.js"></script>
