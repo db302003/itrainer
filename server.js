@@ -5,7 +5,7 @@ var exphbs = require("express-handlebars");
 var session = require("express-session");
 //requiring passport as we configured it
 var passport = require("./config/passport");
-var _USERS = require("./db/seed-users.json")
+var _USERS = require("./db/seed-users.json");
 
 var db = require("./models");
 

@@ -13,7 +13,7 @@ $("#break-button").on("click", function () {
     console.log("click");
     $("#break-page").hide();
     $("#break-timer").show();
-    var duration = 3;
+    var duration = 300;
     breakTimer(duration);
 });
 
